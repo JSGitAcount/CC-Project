@@ -1,0 +1,5 @@
+name: 'recurrentppo'
+
+verbose: True
+
+policy: 'MlpLstmPolicy' # use MultiInputLstmPolicy when using an environment with DictObs

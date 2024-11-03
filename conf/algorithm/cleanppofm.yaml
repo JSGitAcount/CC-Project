@@ -1,0 +1,28 @@
+name: 'cleanppofm'
+
+learning_rate: 3e-4
+n_steps: 2048
+batch_size: 64 # The batch size for the training
+n_epochs: 10 # These are the training epochs for the neural network training, not the rollout epochs (these are in main.yaml)
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+clip_range_vf: null
+normalize_advantage: true
+ent_coef: 0.0
+vf_coef: 0.5
+max_grad_norm: 0.5
+# following parameters are added by me
+position_predicting: true # boolean: if obs is an image, it is easier to predict the position of the agent in the image than the image itself, not relevant for other types of obs -> only tested with moonlander env
+reward_predicting: true # boolean: if the reward is also predicted by the forward model, otherwise the reward is taken from the environment
+normalized_rewards: true # boolean: if the rewards are normalized
+number_of_future_steps: 15 # int: the number of future steps to predict the rewards for
+fm_trained_with_input_noise: false # boolean: if the forward model is trained with data including input noise
+input_noise_on: true # boolean: if the input noise is added to action
+maximum_number_of_objects: 10 # int: maximal number of objects that are considered in the forward model prediction
+
+# forward model computation hyperparameters
+fm_parameters:
+  learning_rate: 0.001
+  reward_eta: 0.2 # small bonus by default
+  hidden_size: 256

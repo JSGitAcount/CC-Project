@@ -1,0 +1,5 @@
+name: 'ppo'
+
+verbose: True
+
+policy: 'MlpPolicy' # use MultiInputPolicy when using an environment with DictObs

@@ -1,0 +1,10 @@
+name: 'dqn'
+
+verbose: True
+
+# replay_buffer_class: HerReplayBuffer  # ++algorithm.replay_buffer_class=null to not use HER
+
+policy: 'MlpPolicy'
+
+learning_starts: 1000
+
